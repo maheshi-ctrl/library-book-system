@@ -22,3 +22,10 @@ This system allows administrators to manage books and student records, track ove
 ![Login Page](login_page.png)
 
 - Updated README: Added screenshot section with dashboard previews
+
+- ## 👤 Author
+
+**Maheshi**  
+Cardiff Metropolitan University  
+**Module**: SEN4002 – Portfolio Submission  
+Added author information to README.md
