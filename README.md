@@ -9,3 +9,16 @@ This system allows administrators to manage books and student records, track ove
 - HTML & CSS (Embedded styling)  
 - phpMyAdmin (Database management)
 - Updated README: Added technologies used section
+
+- ## 📸 Screenshots
+
+### 🔐 Admin Dashboard  
+![Admin Dashboard](admin_dashboard.png)
+
+### 📚 Student Dashboard  
+![Student Dashboard](student_dashboard.png)
+
+### 🔑 Login Page  
+![Login Page](login_page.png)
+
+- Updated README: Added screenshot section with dashboard previews
