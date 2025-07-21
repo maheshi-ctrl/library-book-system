@@ -13,7 +13,7 @@ This system allows administrators to manage books and student records, track ove
 - ## 📸 Screenshots
 
 ### 🔐 Admin Dashboard  
-![Admin Dashboard](library-system/admin_dashboard.png)
+![Admin Dashboard](library-book-system/admin_dashboard.png)
 
 ### 📚 Student Dashboard  
 ![Student Dashboard](library-system/student_dashboard.png)
