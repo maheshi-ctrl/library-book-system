@@ -16,7 +16,7 @@ $result = $conn->query($query);
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['borrowID'])) {
     $borrowID = $_POST['borrowID'];
 
-    // Get bookID from borrowID
+    
     $bookQuery = "SELECT bookID FROM borrowed_books WHERE borrowID = $borrowID";
     $bookRes = $conn->query($bookQuery);
     $book = $bookRes->fetch_assoc();
