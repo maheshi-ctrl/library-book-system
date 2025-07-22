@@ -3,11 +3,11 @@ session_start();
 include("db.php");
 
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
-// Fetch counts
+
 $totalBooks = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM books"))['count'];
 $borrowedToday = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM borrowed_books WHERE borrow_date = CURDATE()"))['count'];
 $overdueCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM borrowed_books WHERE returned IS NULL AND due_date < CURDATE()"))['count'];
