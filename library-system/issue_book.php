@@ -7,11 +7,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     exit();
 }
 
-// Get available books
 $bookQuery = "SELECT bookID, title FROM books WHERE status = 'available'";
 $bookResult = $conn->query($bookQuery);
 
-// Get student users
 $studentQuery = "SELECT email, name FROM users WHERE role = 'student'";
 $studentResult = $conn->query($studentQuery);
 
