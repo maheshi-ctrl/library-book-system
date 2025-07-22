@@ -10,15 +10,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
 $name = $_SESSION['user']['name'];
 $email = $_SESSION['user']['email'];
 
-// Count current borrowed books
 $borrowedQuery = "SELECT COUNT(*) AS count FROM borrowed_books WHERE student_email = '$email' AND returned IS NULL";
 $borrowedCount = mysqli_fetch_assoc(mysqli_query($conn, $borrowedQuery))['count'];
 
-// Count overdue books
 $overdueQuery = "SELECT COUNT(*) AS overdue FROM borrowed_books WHERE student_email = '$email' AND returned IS NULL AND due_date < CURDATE()";
 $overdueCount = mysqli_fetch_assoc(mysqli_query($conn, $overdueQuery))['overdue'];
 
-// Get days left for next due book
 $dueQuery = "SELECT DATEDIFF(due_date, CURDATE()) AS daysLeft FROM borrowed_books WHERE student_email = '$email' AND returned IS NULL ORDER BY due_date ASC LIMIT 1";
 $dueResult = mysqli_fetch_assoc(mysqli_query($conn, $dueQuery));
 $daysLeft = $dueResult ? $dueResult['daysLeft'] : null;
