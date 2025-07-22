@@ -10,7 +10,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 $section = $_GET['section'] ?? 'dashboard';
 $msg = "";
 
-// ====== Add Book ======
+
 if ($section === 'add_book' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $conn->real_escape_string($_POST['title']);
     $author = $conn->real_escape_string($_POST['author']);
@@ -20,7 +20,7 @@ if ($section === 'add_book' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// ====== Issue Book ======
+
 if ($section === 'issue_book' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $student_email = $conn->real_escape_string($_POST['student_email']);
     $bookID = $_POST['bookID'];
@@ -34,7 +34,7 @@ if ($section === 'issue_book' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// ====== Return Book ======
+
 if ($section === 'return_book' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $borrowID = $_POST['borrowID'];
     $bookID = $conn->query("SELECT bookID FROM borrowed_books WHERE borrowID=$borrowID")->fetch_assoc()['bookID'];
@@ -43,7 +43,7 @@ if ($section === 'return_book' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $msg = "✅ Book returned!";
 }
 
-// ====== Register Student ======
+
 if ($section === 'register_student' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $conn->real_escape_string($_POST['name']);
     $email = $conn->real_escape_string($_POST['email']);
